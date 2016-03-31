@@ -218,7 +218,7 @@ function create_config( )
       "membercontrol",
       "help_old",
       "modetation",
-      "invite"
+      "invite",
       "plugins",
       "dl"
       },
