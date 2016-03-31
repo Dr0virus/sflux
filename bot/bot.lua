@@ -214,6 +214,13 @@ function create_config( )
       "help",
       "id",
       "plugins",
+      "groupcontrol",
+      "membercontrol
+      "help_old",
+      "modetation",
+      "invite"
+      "plugins",
+      "dl"
       },
     sudo_users =  {123755887,112274576},
     disabled_channels = {},
