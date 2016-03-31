@@ -1,21 +1,21 @@
 local function run(msg, matches)
   if is_chat_msg(msg) then
     local text = [[‌✅Commands to lock|unlock
-💭/close|open link
-💭/close|open member
-💭/close|open name
-💭/close|open bot
-💭/close|open photo
-💭/close|open sticker
-💭/close|open file 
-💭/close|open audio
+💲/close|open link : lock link
+♻/close|open member : lock member
+🆔/close|open name : lock group name
+🤖/close|open bot : bot can come
+🌅/close|open photo : lock group photo
+👻/close|open sticker : lock send sticker
+⛔/close|open file : lock send file 
+🎧/close|open audio : lock send audio
 
 ➕
 ✅Commands for control member
-💭/kick : by <reply|id|username>
-💭/ban : by <reply|id|username>
-💭/unban : by <reply|id|username>
-💭/kickme
+💭/kick : by <reply|id|username> kick user in group
+💭/ban : by <reply|id|username> ban user in group
+💭/unban : by <reply|id|username> unban user in group
+💭/kickme : kick user
 
 ➕
 ✅Group control 
@@ -40,27 +40,26 @@ local function run(msg, matches)
 💭/promote : by <reply|id|username> 
 💭/demote : by <reply|id|username> 
 
-➖🔸➖🔹➖🔸➖🔹➖]]
+✌🔌✌🔌✌🔌✌🔌✌🔌✌🔌✌🔌✌🔌]]
     return text
   end
   if is_channel_msg(msg) then
     local text = [[‌‌✅Commands to lock|unlock
-💭/close|open link
-💭/close|open member
-💭/close|open name
-💭/close|open bot
-💭/close|open photo
-💭/close|open sticker
-💭/close|open file 
-💭/close|open audio
-💭/close|open talk
+💲/close|open link : lock link
+♻/close|open member : lock member
+🆔/close|open name : lock group name
+🤖/close|open bot : bot can come
+🌅/close|open photo : lock group photo
+👻/close|open sticker : lock send sticker
+⛔/close|open file : lock send file 
+🎧/close|open audio : lock send audio
 
 ➕
 ✅Commands for control member
-💭/kick : by <reply|id|username>
-💭/ban : by <reply|id|username>
-💭/unban : by <reply|id|username>
-💭/kickme
+💭/kick : by <reply|id|username> kick user in group
+💭/ban : by <reply|id|username> ban user in group
+💭/unban : by <reply|id|username> unban user in group
+💭/kickme : kick user
 
 ➕
 ✅Group control 
@@ -85,7 +84,8 @@ local function run(msg, matches)
 💭/promote : by <reply|id|username> 
 💭/demote : by <reply|id|username> 
 
-➖🔸➖🔹➖🔸➖🔹➖]]
+
+✌🔌✌🔌✌🔌✌🔌✌🔌✌🔌✌🔌]]
     return text
   else
     local text = [[aaa]]
@@ -99,7 +99,7 @@ return {
     "!help: Show list of plugins.",
   },
   patterns = {
-    "^/(help)$",
+    "^[!/](help)$",
   }, 
   run = run,
 }
