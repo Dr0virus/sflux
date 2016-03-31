@@ -215,7 +215,7 @@ function create_config( )
       "id",
       "plugins",
       "groupcontrol",
-      "membercontrol
+      "membercontrol",
       "help_old",
       "modetation",
       "invite"
