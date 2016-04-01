@@ -57,7 +57,7 @@ end
 
 local function set_description_chan(msg, data, deskripsi)
     if not is_momod(msg) then
-        return "For moderators only!"
+        return "فقط مدیر گروه میتواند !"
     end
     local data_cat = 'description'
     data[tostring(msg.to.id)][data_cat] = deskripsi
@@ -78,7 +78,7 @@ end
 
 local function set_rules(msg, data)
     if not is_momod(msg) then
-        return "For moderators only!"
+        return "فقط مدیر گروه میتواند!"
     end
     local data_cat = 'rules'
     data[tostring(msg.to.id)][data_cat] = rules
@@ -99,12 +99,12 @@ end
 
 local function lock_group_name(msg, data)
     if not is_momod(msg) then
-        return "For moderators only!"
+        return "فقط مدیر گروه میتواند !"
     end
     local group_name_set = data[tostring(msg.to.id)]['settings']['set_name']
     local group_name_lock = data[tostring(msg.to.id)]['settings']['lock_name']
     if group_name_lock == 'yes' then
-        return 'Group name is already locked'
+        return 'نام گروه از قبل قفل است'
     else
         data[tostring(msg.to.id)]['settings']['lock_name'] = 'yes'
         save_data(_config.moderation.data, data)
@@ -116,7 +116,7 @@ end
 
 local function unlock_group_name(msg, data)
     if not is_momod(msg) then
-        return "For moderators only!"
+        return "فقط مدیر گروه میتواند!"
     end
     local group_name_set = data[tostring(msg.to.id)]['settings']['set_name']
     local group_name_lock = data[tostring(msg.to.id)]['settings']['lock_name']
@@ -125,7 +125,7 @@ local function unlock_group_name(msg, data)
     else
         data[tostring(msg.to.id)]['settings']['lock_name'] = 'no'
         save_data(_config.moderation.data, data)
-    return 'Group name has been unlocked'
+    return 'قفل نام گروه باز شد'
     end
 end
 
@@ -135,7 +135,7 @@ local function lock_group_member(msg, data)
     end
     local group_member_lock = data[tostring(msg.to.id)]['settings']['lock_member']
     if group_member_lock == 'yes' then
-        return 'Group members are already locked'
+        return 'اعضای گروه از قبل قفل است'
     else
         data[tostring(msg.to.id)]['settings']['lock_member'] = 'yes'
         save_data(_config.moderation.data, data)
@@ -145,7 +145,7 @@ end
 
 local function unlock_group_member(msg, data)
     if not is_momod(msg) then
-        return "For moderators only!"
+        return "فقط مدیر گروه میتواند!"
     end
     local group_member_lock = data[tostring(msg.to.id)]['settings']['lock_member']
     if group_member_lock == 'no' then
@@ -153,69 +153,69 @@ local function unlock_group_member(msg, data)
     else
         data[tostring(msg.to.id)]['settings']['lock_member'] = 'no'
         save_data(_config.moderation.data, data)
-    return 'Group members has been unlocked'
+    return 'قفل اعضای گروه باز شد'
     end
 end
 
 local function lock_group_bot(msg, data)
     if not is_momod(msg) then
-        return "For moderators only!"
+        return "فقط مدیر گروه میتواند!"
     end
     local group_bot_lock = data[tostring(msg.to.id)]['settings']['lock_bot']
     if group_bot_lock == 'yes' then
-        return 'Anti bot already locked'
+        return 'ورود ربات ها از قبل قفل است'
     else
         data[tostring(msg.to.id)]['settings']['lock_bot'] = 'yes'
         save_data(_config.moderation.data, data)
     end
-    return 'Anti bot has been locked'
+    return 'ورود ربات ها قفل شد '
 end
 
 local function unlock_group_bot(msg, data)
     if not is_momod(msg) then
-        return "For moderators only!"
+        return "فقط مدیر گروه میتواند!"
     end
     local group_bot_lock = data[tostring(msg.to.id)]['settings']['lock_bot']
     if group_bot_lock == 'no' then
-        return 'Anti bot is not locked'
+        return 'ورود ربات ها قفل نیست'
     else
         data[tostring(msg.to.id)]['settings']['lock_bot'] = 'no'
         save_data(_config.moderation.data, data)
-    return 'Anti bot has been unlocked'
+    return 'ورود ربات ها باز شد '
     end
 end
 
 local function lock_group_link(msg, data)
     if not is_momod(msg) then
-        return "For moderators only!"
+        return "فقط مدیر گروه میتواند!"
     end
     local group_link_lock = data[tostring(msg.to.id)]['settings']['lock_link']
     if group_link_lock == 'yes' then
-        return 'Anti link already locked'
+        return 'ارسال لینک از قبل قفل است'
     else
         data[tostring(msg.to.id)]['settings']['lock_link'] = 'yes'
         save_data(_config.moderation.data, data)
     end
-    return 'Anti link has been locked'
+    return 'ارسال لینک قفل شد'
 end
 
 local function unlock_group_link(msg, data)
     if not is_momod(msg) then
-        return "For moderators only!"
+        return "فقط مدیر گروه میتواند!"
     end
     local group_link_lock = data[tostring(msg.to.id)]['settings']['lock_link']
     if group_link_lock == 'no' then
-        return 'Anti link is not locked'
+        return 'ارسال لینک قفل نیست'
     else
         data[tostring(msg.to.id)]['settings']['lock_link'] = 'no'
         save_data(_config.moderation.data, data)
-    return 'Anti link has been unlocked'
+    return 'ارسال لینک باز شد'
     end
 end
 
 local function lock_group_inviteme(msg, data)
     if not is_momod(msg) then
-        return "For moderators only!"
+        return "فقط مدیر گروه میتواند !"
     end
     local group_inviteme_lock = data[tostring(msg.to.id)]['settings']['lock_inviteme']
     if group_inviteme_lock == 'yes' then
@@ -224,48 +224,48 @@ local function lock_group_inviteme(msg, data)
         data[tostring(msg.to.id)]['settings']['lock_inviteme'] = 'yes'
         save_data(_config.moderation.data, data)
     end
-    return 'Join group has been locked'
+    return 'عضویت در گروه قفل شد'
 end
 
 local function unlock_group_inviteme(msg, data)
     if not is_momod(msg) then
-        return "For moderators only!"
+        return "فقط مدیر گروه میتواند!"
     end
     local group_inviteme_lock = data[tostring(msg.to.id)]['settings']['lock_inviteme']
     if group_inviteme_lock == 'no' then
-        return 'Join group is not locked'
+        return 'عضویت در گروه قفل نیست'
     else
         data[tostring(msg.to.id)]['settings']['lock_inviteme'] = 'no'
         save_data(_config.moderation.data, data)
-    return 'Join group has been unlocked'
+    return 'عضویت در گروه باز شد'
     end
 end
 
 local function lock_group_photo(msg, data)
     if not is_momod(msg) then
-        return "For moderators only!"
+        return "فقط مدیر گروه میتواند!"
     end
     local group_photo_lock = data[tostring(msg.to.id)]['settings']['lock_photo']
     if group_photo_lock == 'yes' then
-        return 'Group photo is already locked'
+        return 'عکس گروه از قبل قفل است'
     else
         data[tostring(msg.to.id)]['settings']['set_photo'] = 'waiting'
         save_data(_config.moderation.data, data)
     end
-    return 'Please send me the group photo now'
+    return 'عکس جدید را ارسال کنید'
 end
 
 local function unlock_group_photo(msg, data)
     if not is_momod(msg) then
-        return "For moderators only!"
+        return "فقط مدیر گروه میتواند!"
     end
     local group_photo_lock = data[tostring(msg.to.id)]['settings']['lock_photo']
     if group_photo_lock == 'no' then
-        return 'Group photo is not locked'
+        return 'عکس گروه قفل نیست'
     else
         data[tostring(msg.to.id)]['settings']['lock_photo'] = 'no'
         save_data(_config.moderation.data, data)
-    return 'Group photo has been unlocked'
+    return 'قفل عکس گروه باز شد'
     end
 end
 
@@ -291,7 +291,7 @@ end
 -- show group settings
 local function show_group_settings(msg, data)
     if not is_momod(msg) then
-        return "For moderators only!"
+        return "فقط مدیر گروه میتواند!"
     end
     if msg.to.type == 'chat' then
         local settings = data[tostring(msg.to.id)]['settings']
@@ -315,182 +315,182 @@ end
 --lock/unlock anti sticker
 local function lock_group_sticker(msg, data)
     if not is_momod(msg) then
-        return "For moderators only!"
+        return "فقط مدیر گروه میتواند!"
     end
     local group_sticker_lock = data[tostring(msg.to.id)]['settings']['lock_sticker']
     if group_sticker_lock == 'yes' then
-        return 'Anti sticker already enabled'
+        return 'قفل استیکر از قبل فعال است'
     else
         data[tostring(msg.to.id)]['settings']['lock_sticker'] = 'yes'
         save_data(_config.moderation.data, data)
     end
-    return 'Anti sticker has been enabled'
+    return 'قفل استیکر فعال شد'
 end
 
 local function unlock_group_sticker(msg, data)
     if not is_momod(msg) then
-        return "For moderators only!"
+        return "فقط مدیر گروه میتواند!"
     end
     local group_sticker_lock = data[tostring(msg.to.id)]['settings']['lock_sticker']
     if group_sticker_lock == 'no' then
-        return 'Anti sticker is not enabled'
+        return 'قفل استیکر فعال نیست'
     else
         data[tostring(msg.to.id)]['settings']['lock_sticker'] = 'no'
         save_data(_config.moderation.data, data)
-    return 'Anti sticker has been disabled'
+    return 'قفل استیکر غیر فعال شد'
     end
 end
 
 local function lock_group_image(msg, data)
     if not is_momod(msg) then
-        return "For moderators only!"
+        return "فقط مدیر گروه میتواند!"
     end
     local group_image_lock = data[tostring(msg.to.id)]['settings']['lock_image']
     if group_image_lock == 'yes' then
-        return 'Image lock already enabled'
+        return 'ارسال عکس از قبل قفل است'
     else
         data[tostring(msg.to.id)]['settings']['lock_image'] = 'yes'
         save_data(_config.moderation.data, data)
     end
-    return 'Image lock has been enabled'
+    return 'ارسال عکس قفل شد'
 end
 
 local function unlock_group_image(msg, data)
     if not is_momod(msg) then
-        return "For moderators only!"
+        return "فقط مدیر گروه میتواند!"
     end
     local group_image_lock = data[tostring(msg.to.id)]['settings']['lock_image']
     if group_image_lock == 'no' then
-        return 'Image lock is not enabled'
+        return 'ارسال عکس قفل نیست'
     else
         data[tostring(msg.to.id)]['settings']['lock_image'] = 'no'
         save_data(_config.moderation.data, data)
-    return 'Image lock has been disabled'
+    return 'ارسال عکس قفل شد'
     end
 end
 
 --[[local function lock_group_video(msg, data)
     if not is_momod(msg) then
-        return "For moderators only!"
+        return "فقط مدیر گروه میتواند!"
     end
     local group_video_lock = data[tostring(msg.to.id)]['settings']['lock_sticker']
     if group_video_lock == 'yes' then
-        return 'Anti sticker already enabled'
+        return 'ارسال ویدیو قفل شد '
     else
         data[tostring(msg.to.id)]['settings']['lock_sticker'] = 'yes'
         save_data(_config.moderation.data, data)
     end
-    return 'Anti sticker has been enabled'
+    return 'ارسال ویدیو فعال شد'
 end
 
 local function unlock_group_video(msg, data)
     if not is_momod(msg) then
-        return "For moderators only!"
+        return "فقط مدیر گروه میتواند!"
     end
     local group_video_lock = data[tostring(msg.to.id)]['settings']['lock_sticker']
     if group_video_lock == 'no' then
-        return 'Anti sticker is not enabled'
+        return 'ارسال ویدیو قفل نیست'
     else
         data[tostring(msg.to.id)]['settings']['lock_sticker'] = 'no'
         save_data(_config.moderation.data, data)
-    return 'Anti sticker has been disabled'
+    return 'قفل ارسال ویدیو غیر فعال شد'
     end
 end
 
 local function lock_group_audio(msg, data)
     if not is_momod(msg) then
-        return "For moderators only!"
+        return "فقط مدیر گروه میتواند!"
     end
     local group_audio_lock = data[tostring(msg.to.id)]['settings']['lock_audio']
     if group_audio_lock == 'yes' then
-        return 'Lock audio already enabled'
+        return 'ارسال صدا قفل است'
     else
         data[tostring(msg.to.id)]['settings']['lock_audio'] = 'yes'
         save_data(_config.moderation.data, data)
     end
-    return 'Lock audio has been enabled'
+    return 'ارسال صدا قفل شد'
 end
 
 local function unlock_group_audio(msg, data)
     if not is_momod(msg) then
-        return "For moderators only!"
+        return "فقط مدیر گروه میتواند!"
     end
     local group_audio_lock = data[tostring(msg.to.id)]['settings']['lock_audio']
     if group_audio_lock == 'no' then
-        return 'Lock audio is not enabled'
+        return 'ارسال صدا قفل نیست'
     else
         data[tostring(msg.to.id)]['settings']['lock_audio'] = 'no'
         save_data(_config.moderation.data, data)
-    return 'Lock audio has been disabled'
+    return 'قفل ارسال صدا غیر فعال شد'
     end
 end]]
 
 local function lock_group_file(msg, data)
     if not is_momod(msg) then
-        return "For moderators only!"
+        return "فقط مدیر گروه میتواند!"
     end
     local group_file_lock = data[tostring(msg.to.id)]['settings']['lock_file']
     if group_file_lock == 'yes' then
-        return 'Lock file already enabled'
+        return 'ارسال فایل قفل است'
     else
         data[tostring(msg.to.id)]['settings']['lock_file'] = 'yes'
         save_data(_config.moderation.data, data)
     end
-    return 'Lock file has been enabled'
+    return 'ارسال فایل قفل است'
 end
 
 local function unlock_group_file(msg, data)
     if not is_momod(msg) then
-        return "For moderators only!"
+        return "فقط مدیر گروه میتواند!"
     end
     local group_file_lock = data[tostring(msg.to.id)]['settings']['lock_file']
     if group_file_lock == 'no' then
-        return 'Lock file is not enabled'
+        return 'ارسال فایل قفل نیست'
     else
         data[tostring(msg.to.id)]['settings']['lock_file'] = 'no'
         save_data(_config.moderation.data, data)
-    return 'Lock file has been disabled'
+    return 'قفل ارسال فایل غیر فعال شد'
     end
 end
 
 local function lock_group_talk(msg, data)
     if not is_momod(msg) then
-        return "For moderators only!"
+        return "فقط مدیر گروه میتواند!"
     end
     local group_talk_lock = data[tostring(msg.to.id)]['settings']['lock_talk']
     if group_talk_lock == 'yes' then
-        return 'Silent group already enabled'
+        return 'چت کردن در گروه قفل است'
     else
         data[tostring(msg.to.id)]['settings']['lock_talk'] = 'yes'
         save_data(_config.moderation.data, data)
     end
-    return 'Silent group has been enabled'
+    return 'قفل چت فعال شد'
 end
 
 local function unlock_group_talk(msg, data)
     if not is_momod(msg) then
-        return "For moderators only!"
+        return "فقط مدیر گروه میتواند!"
     end
     local group_talk_lock = data[tostring(msg.to.id)]['settings']['lock_talk']
     if group_talk_lock == 'no' then
-        return 'Silent group is not enabled'
+        return 'قفل چت فعال است'
     else
         data[tostring(msg.to.id)]['settings']['lock_talk'] = 'no'
         save_data(_config.moderation.data, data)
-    return 'Silent group has been disabled'
+    return 'قفل چت غیرفعال شد'
     end
 end
 
 local function lock_group_all(msg, data)
     if not is_momod(msg) then
-        return "For moderators only!"
+        return "فقط مدیر گروه میتواند!"
     end
     return 'lock all'
 end
 
 local function unlock_group_all(msg, data)
     if not is_momod(msg) then
-        return "For moderators only!"
+        return "فقط مدیر گروه میتواند!"
     end
     return 'unlock all'
 end
@@ -754,19 +754,19 @@ function run(msg, matches)
         	local get_cmd = matches[1]
             if matches[1] == 'block' and matches[2] then
                 if not is_momod(msg) then
-                    return "For moderators only!"
+                    return "فقط مدیر گروه میتوانید!"
                 end
                 return block_word(receiver, matches[2])
             end
             if matches[1] == 'unblock' and matches[2] then
                 if not is_momod(msg) then
-                    return "For moderators only!"
+                    return "فقط مدیر گروه میتواند!"
                 end
                 return unblock_word(receiver, matches[2])
             end
             if matches[1] == 'getlink' then
                 if not is_momod(msg) then
-                    return "For moderators only!"
+                    return "فقط مدیر گروه میتواند!"
                 end
                 if data[tostring(msg.to.id)]['link'] then
                     local link = data[tostring(msg.to.id)]['link']
@@ -778,7 +778,7 @@ function run(msg, matches)
             end
             if matches[1] == 'relink'then
                 if not is_momod(msg) then
-                    return "Moderators only!"
+                    return "فقط مدیر!"
                 end
                 if matches[2] == tostring(msg.to.id) then
                     export_chat_link(receiver, generate_link, {receiver=receiver, data=data, user_id=msg.from.id})
@@ -940,7 +940,7 @@ function run(msg, matches)
             if matches[1] == 'rules' then
                 return get_rules(msg, data)
             end
-            if matches[1] == 'close' then --group lock *
+            if matches[1] == 'no' then --group lock *
                 --[[if matches[2] == 'name' then
                     return lock_group_name(msg, data)
                 end
@@ -1065,7 +1065,7 @@ return {
           "/setname <new_name> : Set group name",
           "/setphoto : Set group photo",
           "/<no|yes> name : Lock/unlock group name",
-          "/<ni|yes> photo : Lock/unlock group photo",
+          "/<no|yes> photo : Lock/unlock group photo",
           "/<no|yes> member : Lock/unlock group member",
           "/<no|yes> spam : Enable/disable spam protection",
           "/<no|yes> sticker : Enable/disable anti sticker",
