@@ -800,7 +800,7 @@ function run(msg, matches)
             if matches[1] == 'rules' then
                 return get_rules(msg, data)
             end
-            if matches[1] == 'close' then --group lock *
+            if matches[1] == 'no' then --group lock *
                 if matches[2] == 'name' then
                     return lock_group_name(msg, data)
                 end
@@ -835,7 +835,7 @@ function run(msg, matches)
                 	return lock_group_all(msg, data)
                 end
             end
-            if matches[1] == 'open' then --group unlock *
+            if matches[1] == 'yes' then --group unlock *
                 if matches[2] == 'name' then
                     return unlock_group_name(msg, data)
                 end
@@ -975,7 +975,7 @@ function run(msg, matches)
                 --	return lock_group_all(msg, data)
                 --end
             end
-            if matches[1] == 'open' then --group unlock *
+            if matches[1] == 'yes' then --group unlock *
                 --[[if matches[2] == 'name' then
                     return unlock_group_name(msg, data)
                 end
@@ -1064,12 +1064,12 @@ return {
           "/setrules <rules> : Set group rules",
           "/setname <new_name> : Set group name",
           "/setphoto : Set group photo",
-          "/<close|open> name : Lock/unlock group name",
-          "/<close|open> photo : Lock/unlock group photo",
-          "/<close|open> member : Lock/unlock group member",
-          "/<close|open> spam : Enable/disable spam protection",
-          "/<close|open> sticker : Enable/disable anti sticker",
-          "/<close|open> antilink : Enable/disable anti link",
+          "/<no|yes> name : Lock/unlock group name",
+          "/<ni|yes> photo : Lock/unlock group photo",
+          "/<no|yes> member : Lock/unlock group member",
+          "/<no|yes> spam : Enable/disable spam protection",
+          "/<no|yes> sticker : Enable/disable anti sticker",
+          "/<no|yes> antilink : Enable/disable anti link",
           "/group settings : Show group settings",
           "/join <group id> : Join to any group by ID (if not locked)",
           },
@@ -1085,8 +1085,8 @@ return {
     "^/(rules)$",
     "^/(setname) (.*)$",
     "^/(setphoto)$",
-    "^/(close) (.*)$",
-    "^/(open) (.*)$",
+    "^/(no) (.*)$",
+    "^/(yes) (.*)$",
     "^/(group) (settings)$",
     "^/(join) (.+)$",
     "%[(photo)%]",
