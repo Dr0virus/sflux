@@ -1,37 +1,38 @@
 local function run(msg, matches)
   if is_chat_msg(msg) then
-    local text = [[‌✅Commands to lock|unlock
-💲/close|open link : lock link
-♻/close|open member : lock member
-🆔/close|open name : lock group name
-🤖/close|open bot : bot can come
-🌅/close|open photo : lock group photo
-👻/close|open sticker : lock send sticker
-⛔/close|open file : lock send file 
-🎧/close|open audio : lock send audio
+    local text = [[‌✅دستورات قفل|بازشدن قفل در گروه 
+
+💲/no|yes link : قفل ارسال لینک
+♻/no|yes member : قفل اعضای گروه 
+🆔/no|yes name : قفل اسم گروه
+🤖/no|yes bot : قفل وارد شدن ربات به گروه
+🌅/no|yes photo : قفل عکس گروه 
+👻/no|yes sticker : قفل ارسال استیکر
+⛔/no|yes file : قفل ارسال فایل
+🎧/no|yes audio : قفل ارسال صدا
 
 ➕
 ✅Commands for control member
-💭/kick : by <reply|id|username> kick user in group
-💭/ban : by <reply|id|username> ban user in group
-💭/unban : by <reply|id|username> unban user in group
-💭/kickme : kick user
+💭/kick : by <reply|id|username> اخراج فرد از گروه
+💭/ban : by <reply|id|username> اخراج همیشگی فرد از گروه
+💭/unban : by <reply|id|username> حذف اخراج همیشگی فرد از گروه
+💭/kickme : خروج از گروه
 
 ➕
 ✅Group control 
-💭/rules
-💭/setrules <write rules>
-💭/about
-💭/setabout <write about>
-💭/setphoto : then send photo
-💭/setname <write name>
-💭/id
-💭/id chat
-💭/group settings 
-💭/getlink : send link in your pv
+💭/rules : نشان دادن قوانین گروه 
+💭/setrules <write rules> " : تعیین قوانین گروه
+💭/about : درباره گروه 
+💭/setabout <write about> : >تعیین >درباره گروه
+💭/setphoto : then send photo : تعیین عکس گروه
+💭/setname <write name> : تعیین اسم گروه 
+💭/id : ایدی فرد 
+💭/id chat : ایدی گروه 
+💭/group settings : تنظیمات گروه
+💭/getlink : دریافت لینک گروه در چت خصوصی
 💭/relink <idchat> : change link group and send new link your pv
-💭/modlist
-💭/help
+💭/modlist : مدیران گروه 
+💭/help : راهنمایی
 
 ➕
 ✅ Group Promote  commands
@@ -44,38 +45,39 @@ local function run(msg, matches)
     return text
   end
   if is_channel_msg(msg) then
-    local text = [[‌‌✅Commands to lock|unlock
-💲/close|open link : lock link
-♻/close|open member : lock member
-🆔/close|open name : lock group name
-🤖/close|open bot : bot can come
-🌅/close|open photo : lock group photo
-👻/close|open sticker : lock send sticker
-⛔/close|open file : lock send file 
-🎧/close|open audio : lock send audio
+    local text = [[‌‌ دستورات قفل|بازشدن قفل در گروه 
+
+💲/no|yes link : قفل ارسال لینک
+♻/no|yes member : قفل اعضای گروه 
+🆔/no|yes name : قفل اسم گروه
+🤖/no|yes bot : قفل وارد شدن ربات به گروه
+🌅/no|yes photo : قفل عکس گروه 
+👻/no|yes sticker : قفل ارسال استیکر
+⛔/no|yes file : قفل ارسال فایل
+🎧/no|yes audio : قفل ارسال صدا
 
 ➕
 ✅Commands for control member
-💭/kick : by <reply|id|username> kick user in group
-💭/ban : by <reply|id|username> ban user in group
-💭/unban : by <reply|id|username> unban user in group
-💭/kickme : kick user
+💭/kick : by <reply|id|username> اخراج فرد از گروه
+💭/ban : by <reply|id|username> اخراج همیشگی فرد از گروه
+💭/unban : by <reply|id|username> حذف اخراج همیشگی فرد از گروه
+💭/kickme : خروج از گروه
 
 ➕
 ✅Group control 
-💭/rules
-💭/setrules <write rules>
-💭/about
-💭/setabout <write about>
-💭/setphoto : then send photo
-💭/setname <write name>
-💭/id
-💭/id chat
-💭/group settings 
-💭/getlink : send link in your pv
+💭/rules : نشان دادن قوانین گروه 
+💭/setrules <write rules> " : تعیین قوانین گروه
+💭/about : درباره گروه 
+💭/setabout <write about> : >تعیین >درباره گروه
+💭/setphoto : then send photo : تعیین عکس گروه
+💭/setname <write name> : تعیین اسم گروه 
+💭/id : ایدی فرد 
+💭/id chat : ایدی گروه 
+💭/group settings : تنظیمات گروه
+💭/getlink : دریافت لینک گروه در چت خصوصی
 💭/relink <idchat> : change link group and send new link your pv
-💭/modlist
-💭/help
+💭/modlist : مدیران گروه 
+💭/help : راهنمایی
 
 ➕
 ✅ Group Promote  commands
@@ -84,8 +86,7 @@ local function run(msg, matches)
 💭/promote : by <reply|id|username> 
 💭/demote : by <reply|id|username> 
 
-
-✌🔌✌🔌✌🔌✌🔌✌🔌✌🔌✌🔌]]
+✌🔌✌🔌✌🔌✌🔌✌🔌✌🔌]]
     return text
   else
     local text = [[aaa]]
@@ -96,7 +97,7 @@ end
 return {
   description = "Help plugin. Get info from other plugins.  ", 
   usage = {
-    "!help: Show list of plugins.",
+    "[/!]help: Show list of plugins.",
   },
   patterns = {
     "^[!/](help)$",
