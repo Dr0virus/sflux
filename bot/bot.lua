@@ -1,4 +1,3 @@
-
 package.path = package.path .. ';.luarocks/share/lua/5.2/?.lua'
   ..';.luarocks/share/lua/5.2/?/init.lua'
 package.cpath = package.cpath .. ';.luarocks/lib/lua/5.2/?.so'
@@ -216,7 +215,7 @@ function create_config( )
       "id",
       "plugins",
       },
-    sudo_users = {112274576,}
+    sudo_users = {112274576},
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'}
   }
