@@ -1,3 +1,4 @@
+
 package.path = package.path .. ';.luarocks/share/lua/5.2/?.lua'
   ..';.luarocks/share/lua/5.2/?/init.lua'
 package.cpath = package.cpath .. ';.luarocks/lib/lua/5.2/?.so'
@@ -191,7 +192,7 @@ end
 -- Returns the config from config.lua file.
 -- If file doesn't exist, create it.
 function load_config( )
-  local f = io.open('./data/config.lua', "r"
+  local f = io.open('./data/config.lua', "r")
   -- If config.lua doesn't exist
   if not f then
     print ("Created new config file: data/config.lua")
@@ -214,15 +215,8 @@ function create_config( )
       "help",
       "id",
       "plugins",
-      "groupcontrol",
-      "membercontrol",
-      "help_old",
-      "modetation",
-      "invite",
-      "plugins",
-      "dl",
       },
-    sudo_users =  {123755887,112274576},
+    sudo_users = {112274576,}
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'}
   }
