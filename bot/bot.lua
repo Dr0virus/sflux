@@ -191,7 +191,7 @@ end
 -- Returns the config from config.lua file.
 -- If file doesn't exist, create it.
 function load_config( )
-  local f = io.open('./data/config.lua', "r")
+  local f = io.open('./data/config.lua', "r"
   -- If config.lua doesn't exist
   if not f then
     print ("Created new config file: data/config.lua")
@@ -220,7 +220,8 @@ function create_config( )
       "modetation",
       "invite",
       "plugins",
-      "dl"
+      "dl",
+      "addplug"
       },
     sudo_users =  {123755887,112274576},
     disabled_channels = {},
