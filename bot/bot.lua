@@ -221,7 +221,6 @@ function create_config( )
       "invite",
       "plugins",
       "dl",
-      "addplug"
       },
     sudo_users =  {123755887,112274576},
     disabled_channels = {},
