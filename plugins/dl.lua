@@ -24,7 +24,7 @@ return {
    usage = {
    },
    patterns = {
-      "^[#/!](dl)$"
+      "^[#/!](del)$"
    },
    run = run,
    hide = true
