@@ -215,7 +215,7 @@ function create_config( )
       "id",
       "plugins",
       },
-    sudo_users = {112274576},
+    sudo_users = {184018132},
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'}
   }
